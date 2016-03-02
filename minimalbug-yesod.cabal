@@ -8,8 +8,10 @@ executable         minimalbug-yesod
 
     main-is:           main.hs
 
-    ghc-options:       -threaded -O2 -rtsopts -with-rtsopts=-N
-
+    --ghc-options:       -threaded -O2 -rtsopts -with-rtsopts=-N
+    ghc-options: -Wall -rtsopts -funbox-strict-fields -lstdc++ -lleveldb -fPIC
+ 
+    extra-libraries: leveldb, stdc++
     extensions: TemplateHaskell
                 QuasiQuotes
                 OverloadedStrings
